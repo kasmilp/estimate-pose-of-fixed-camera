@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+reports/
+exports/
+data/calibration/
+data/calibration_synth/
+*.npz
+!data/*.npz
