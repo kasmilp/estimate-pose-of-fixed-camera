@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eye-to-hand-calibration"
+version = "2.0.0"
+description = "Estimate the pose of a fixed camera relative to a robot base (eye-to-hand calibration) in Python."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "kasmi" }]
+keywords = ["robot", "camera", "calibration", "hand-eye", "eye-to-hand", "pose"]
+dependencies = [
+    "numpy>=1.24",
+    "opencv-python-headless>=4.8",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+eye-to-hand-calibrate = "scripts.calibrate:main"
+eye-to-hand-generate = "scripts.generate_synthetic_data:main"
+eye-to-hand-visualize = "scripts.visualize:main"
+
+[tool.setuptools]
+packages = ["eye_to_hand"]
+
+[tool.setuptools.package-data]
+eye_to_hand = ["assets/*.urdf"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

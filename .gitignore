@@ -1,8 +1,26 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Environments
+.venv/
+.venv-1/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated data / reports
+data/generated/
 reports/
-exports/
-data/calibration/
-data/calibration_synth/
 *.npz
-!data/*.npz
+*.png
+!docs/**/*.png
